@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import './Style.css';
+import "./Style.css";
 
-function Buy(props) {
+function Borrow(props) {
   const mappedbooks = props.books.map((book) => (
     <div key={book.isbn13} className="buy">
       <div className="buy--image">
@@ -12,7 +11,7 @@ function Buy(props) {
         <p>title: {book.title}</p>
         <p>ISBN: {book.isbn13}</p>
         <p>{book.price}</p>
-        <Link to={`buy/${book.isbn13}`}><button>Buy Now</button></Link>
+        <button>Borrow Now</button>
       </div>
     </div>
   ));
@@ -20,4 +19,4 @@ function Buy(props) {
   return <div>{mappedbooks}</div>;
 }
 
-export default Buy;
+export default Borrow;
