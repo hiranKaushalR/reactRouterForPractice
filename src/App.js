@@ -2,6 +2,8 @@ import Head from "./Components/Head";
 import Foot from "./Components/Foot";
 import Home from "./Components/Home";
 import Buy from "./Components/Buy";
+import Borrow from "./Components/Borrow";
+import About from "./Components/About";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -14,17 +16,14 @@ function App() {
       .then((data) => setBooks(data.books));
   }, []);
 
-  console.log(books);
-
-
   return (
     <>
       <Head />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/buy" element={<Buy books={books}/>} />
-        <Route path="/borrow" element={<h1>Borrow Books</h1>} />
-        <Route path="/about" element={<h1>About Us</h1>} />
+        <Route path="/borrow" element={<Borrow books={books}/>} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Foot />
     </>
